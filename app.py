@@ -277,5 +277,4 @@ with gr.Blocks(
     img_input.upload(predict_disease, inputs=[img_input],
                      outputs=[pred_out, conf_out, top3_out, info_out, treat_out])
 
-if __name__ == '__main__':
-    demo.launch()
+demo.launch()
