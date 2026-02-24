@@ -250,7 +250,7 @@ with gr.Blocks(
             with gr.Row():
                 pred_out = gr.Textbox(label='🌿 Detected Disease', interactive=False, scale=3)
                 conf_out = gr.Textbox(label='📊 Confidence',       interactive=False, scale=1)
-            top3_out = gr.Label(label='🏆 Top-3 Predictions', num_top_classes=3)
+            top3_out = gr.JSON(label='🏆 Top-3 Predictions (%)')
             with gr.Accordion('🔬 Disease Information', open=True):
                 info_out = gr.Markdown('_Upload an image and click Analyse._')
             with gr.Accordion('💊 Treatment & Prevention', open=False):
