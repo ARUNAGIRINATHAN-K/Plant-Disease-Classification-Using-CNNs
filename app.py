@@ -176,12 +176,11 @@ def get_disease_info(class_name: str) -> dict:
 
 def predict_disease(image):
     if image is None:
-        return 'No image provided', '—', {}, '⚠️ Please upload a leaf image.', ''
+        return 'No image provided', '—', {}, '⚠️ Please upload a leaf image.'
 
     if model is None:
         return ('Demo Mode', '—', {},
-                '⚠️ Model file not loaded. Upload `plant_disease_model.h5` to the Space.',
-                '')
+                '⚠️ Model file not loaded. Upload `plant_disease_model.h5` to the Space.')
 
     # Preprocess
     img  = image.convert('RGB').resize(IMG_SIZE)
@@ -207,12 +206,7 @@ def predict_disease(image):
         f'**Severity:** {info["severity"]}\n\n'
         f'{info["description"]}'
     )
-    treatment_md = (
-        f'### 💊 Treatment\n{info["treatment"]}\n\n'
-        f'### 🛡️ Prevention\n{info["prevention"]}'
-    )
-
-    return format_class(best_name), f'{best_conf*100:.2f}%', top3_dict, info_md, treatment_md
+    return format_class(best_name), f'{best_conf*100:.2f}%', top3_dict, info_md
 
 
 # ── Gradio UI ──────────────────────────────────────────────────────────────────
@@ -233,11 +227,6 @@ with gr.Blocks(
 ) as demo:
 
     gr.Markdown('# 🌿 Plant Disease Classification System', elem_id='title')
-    gr.Markdown(
-        'Upload a leaf image to instantly detect plant disease using AI.  \n'
-        'Powered by **EfficientNetB3** trained on PlantVillage (38 classes).',
-        elem_id='subtitle'
-    )
 
     with gr.Row():
         with gr.Column(scale=4):
@@ -253,19 +242,6 @@ with gr.Blocks(
             top3_out = gr.JSON(label='🏆 Top-3 Predictions (%)')
             with gr.Accordion('🔬 Disease Information', open=True):
                 info_out = gr.Markdown('_Upload an image and click Analyse._')
-            with gr.Accordion('💊 Treatment & Prevention', open=False):
-                treat_out = gr.Markdown('')
-
-    with gr.Accordion('ℹ️ How to Use', open=False):
-        gr.Markdown("""
-        1. **Upload** a clear close-up photo of a plant leaf (JPG / PNG)
-        2. Click **Analyse Leaf**
-        3. View the detected disease, confidence, and top-3 predictions
-        4. Expand the accordions for treatment and prevention advice
-
-        > **Supported crops:** Apple · Blueberry · Cherry · Corn · Grape · Orange ·
-        Peach · Pepper · Potato · Raspberry · Soybean · Squash · Strawberry · Tomato
-        """)
 
     gr.Markdown(
         '<p class="footer">🌿 Plant Disease Classification &nbsp;|&nbsp; '
@@ -273,8 +249,8 @@ with gr.Blocks(
     )
 
     predict_btn.click(predict_disease, inputs=[img_input],
-                      outputs=[pred_out, conf_out, top3_out, info_out, treat_out])
+                      outputs=[pred_out, conf_out, top3_out, info_out])
     img_input.upload(predict_disease, inputs=[img_input],
-                     outputs=[pred_out, conf_out, top3_out, info_out, treat_out])
+                     outputs=[pred_out, conf_out, top3_out, info_out])
 
 demo.launch()
