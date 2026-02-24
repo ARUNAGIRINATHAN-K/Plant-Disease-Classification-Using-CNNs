@@ -2,7 +2,7 @@
 title: Plant Disease Classification
 emoji: 🌿
 colorFrom: green
-colorTo: emerald
+colorTo: green
 sdk: gradio
 sdk_version: "4.44.1"
 python_version: "3.10"
