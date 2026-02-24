@@ -1,0 +1,5 @@
+tensorflow>=2.12.0
+gradio==4.44.1
+numpy
+pillow
+opencv-python-headless
