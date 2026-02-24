@@ -1,5 +1,4 @@
-tensorflow>=2.10.0
-gradio==4.44.1
+tensorflow
+gradio
 numpy
 pillow
-huggingface_hub==0.16.4
