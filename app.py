@@ -224,8 +224,8 @@ css = """
 
 with gr.Blocks(
     theme=gr.themes.Soft(
-        primary_hue   = gr.themes.colors.green,
-        secondary_hue = gr.themes.colors.emerald,
+        primary_hue   = "green",
+        secondary_hue = "blue",
         font          = [gr.themes.GoogleFont('Inter'), 'Arial', 'sans-serif']
     ),
     css   = css,
@@ -278,4 +278,4 @@ with gr.Blocks(
                      outputs=[pred_out, conf_out, top3_out, info_out, treat_out])
 
 if __name__ == '__main__':
-    demo.queue(max_size=10).launch()
+    demo.launch()
