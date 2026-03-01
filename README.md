@@ -26,9 +26,6 @@ pipe("https://huggingface.co/datasets/huggingface/documentation-images/resolve/m
 from transformers import AutoModel
 model = AutoModel.from_pretrained("ARUNAGIRINATHAN/plant_disease", dtype="auto")
 ```
-
-![Visit Kaggle](https://www.kaggle.com/code/arunsworkspace/plant-disease-cnn)
-
 ---
 ## Dataset ([view on Kaggle](https://www.kaggle.com/datasets/abdallahalidev/plantvillage-dataset))
 ```python
