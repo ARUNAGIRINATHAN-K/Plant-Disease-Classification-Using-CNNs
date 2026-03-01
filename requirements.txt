@@ -1,3 +1,8 @@
-tensorflow-cpu
-numpy
+torch
+torchvision
+timm
 pillow
+numpy
+transformers
+matplotlib
+numpy
