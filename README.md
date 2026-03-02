@@ -41,6 +41,21 @@ path = kagglehub.dataset_download("abdallahalidev/plantvillage-dataset")
 
 ![Demo](img/demo.gif)
 
+### Output Grid
+
+<table>
+	<tr>
+		<td align="center" valign="middle"><img src="img/__results___16_0.png" alt="Output 1" width="300"/></td>
+		<td align="center" valign="middle"><img src="img/__results___16_1.png" alt="Output 2" width="300"/></td>
+		<td align="center" valign="middle"><img src="img/__results___16_2.png" alt="Output 3" width="300"/></td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle"><img src="img/__results___16_3.png" alt="Output 4" width="300"/></td>
+		<td align="center" valign="middle"><img src="img/__results___16_4.png" alt="Output 5" width="300"/></td>
+		<td align="center" valign="middle"><img src="img/__results___16_5.png" alt="Output 6" width="300"/></td>
+	</tr>
+</table>
+
 ## Flow
 ![](img/flow1.png)
 
