@@ -35,14 +35,17 @@ path = kagglehub.dataset_download("abdallahalidev/plantvillage-dataset")
 
 - ~54,000 images across **38 classes** (healthy + diseased)
 - Covers **14 crop species** (tomato, potato, corn, apple, etc.)
-- Available on Kaggle and TensorFlow Datasets
+- Available on [Kaggle](https://www.kaggle.com/datasets/abdallahalidev/plantvillage-dataset) and [TensorFlow Datasets](https://www.tensorflow.org/datasets/catalog/plant_village)
 
 ## Demo
 
 ![Demo](img/demo.gif)
 
+## Flow
+![](img/flow1.png)
+
 ## Model
-- **Architecture:** EfficientNetB3 (Transfer Learning + Fine-tuning)
+- **Architecture:** [EfficientNetB3](EfficientNet.md) (Transfer Learning + Fine-tuning)
 - **Framework:** TensorFlow / Keras
 - **Input:** 224 × 224 RGB leaf images
 - **Output:** 38-class softmax prediction
