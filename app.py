@@ -1,6 +1,7 @@
+import torch
+torch.set_num_threads(2)
 import gradio as gr
 import matplotlib.pyplot as plt
-import torch
 import torch.nn as nn
 import torch.nn.functional as F
 import timm
@@ -43,7 +44,7 @@ transform = transforms.Compose([
 def predict(image):
     img_tensor = transform(image).unsqueeze(0).to(device)
 
-    with torch.no_grad():
+    with torch.inference_mode():
         outputs = model(img_tensor)
         probs = F.softmax(outputs, dim=1)[0]
 
@@ -58,14 +59,48 @@ def predict(image):
     ax.axis("off")
     ax.set_title(f"{predicted_class} ({confidence:.2f}%)")
 
-    return fig
+    result_text = f"### {predicted_class} ({confidence:.2f}%)"
+    return image, result_text
 
 interface = gr.Interface(
-    fn=predict,
-    inputs=gr.Image(type="pil"),
-    outputs=gr.Plot(),
-    title="🌿 Plant Disease Classification",
-    description="Upload a leaf image to detect disease using EfficientNet-B0"
+       fn=predict,
+       inputs=gr.Image(type="pil"),
+       outputs=[
+           gr.Image(type="pil"),
+           gr.Markdown()
+       ],
+       title="🌿 Plant Disease Classification",
+       description="Upload a leaf image to detect disease using EfficientNet-B0"
 )
 
 interface.launch()
+with gr.Blocks() as demo:
+        gr.Markdown("## 🌿 Plant Disease Classification")
+
+        with gr.Row():
+            with gr.Column(scale=1):
+                input_image = gr.Image(type="pil", height=300)
+
+            with gr.Column(scale=1):
+                output_label = gr.Label()
+
+        btn = gr.Button("Predict")
+
+        btn.click(predict, inputs=input_image, outputs=output_label)
+
+demo.launch()
+with gr.Blocks() as demo:
+    gr.Markdown("## 🌿 Plant Disease Classification")
+
+    with gr.Row():
+        with gr.Column(scale=1):
+            input_image = gr.Image(type="pil", height=300, width=300)
+
+        with gr.Column(scale=1):
+            output_label = gr.Label()
+
+    btn = gr.Button("Predict")
+
+    btn.click(predict, inputs=input_image, outputs=output_label)
+
+demo.launch()
