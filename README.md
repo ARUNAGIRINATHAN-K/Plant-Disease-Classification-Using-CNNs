@@ -41,7 +41,7 @@ path = kagglehub.dataset_download("abdallahalidev/plantvillage-dataset")
 
 ![Demo](img/demo.gif)
 
-### Output Grid
+### Output 
 
 <table>
 	<tr>
@@ -52,7 +52,7 @@ path = kagglehub.dataset_download("abdallahalidev/plantvillage-dataset")
 	<tr>
 		<td align="center" valign="middle"><img src="img/__results___16_3.png" alt="Output 4" width="300"/></td>
 		<td align="center" valign="middle"><img src="img/__results___16_4.png" alt="Output 5" width="300"/></td>
-		<td align="center" valign="middle"><img src="img/__results___16_5.png" alt="Output 6" width="300"/></td>
+		<td align="center" valign="middle"><img src="img/__results___15_0.png" alt="Output 6" width="400"/></td>
 	</tr>
 </table>
 
