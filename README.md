@@ -41,6 +41,9 @@ path = kagglehub.dataset_download("abdallahalidev/plantvillage-dataset")
 
 ![Demo](img/demo.gif)
 
+## Flow
+![](img/flow.png)
+
 ## Model
 - **Architecture:** [EfficientNetB3](EfficientNet.md) (Transfer Learning + Fine-tuning)
 - **Framework:** TensorFlow / Keras
