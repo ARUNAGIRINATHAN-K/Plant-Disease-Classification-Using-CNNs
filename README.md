@@ -12,7 +12,7 @@
 ([view on Kaggle](https://www.kaggle.com/code/arunsworkspace/plant-disease-cnn))
 ---
 
-## Transform
+## Transformers
 
 ```python
 # Use a pipeline as a high-level helper
