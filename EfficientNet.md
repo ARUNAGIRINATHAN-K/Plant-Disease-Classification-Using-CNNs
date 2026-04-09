@@ -17,7 +17,7 @@ This repository provides a robust pipeline for classifying plant diseases using 
 
 **Install timm**
 
-```python
+```bash
 pip install timm
 ```
 
