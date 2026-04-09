@@ -12,7 +12,12 @@
 ([view on Kaggle](https://www.kaggle.com/code/arunsworkspace/plant-disease-cnn))
 ---
 
-## Transformers
+## Hugging Face Model (separately published)
+
+The trained weights are also published as a standalone Hugging Face model at
+[ARUNAGIRINATHAN/plant_disease](https://huggingface.co/ARUNAGIRINATHAN/plant_disease).
+If you want to use it via the `transformers` library (independent of this repo's
+`app.py`, which uses `timm` and Gradio directly), you can do so as follows:
 
 ```python
 # Use a pipeline as a high-level helper
