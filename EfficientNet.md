@@ -87,7 +87,7 @@ for param in model.parameters():
 #### Train with lower LR:
 ```python
 optimizer = torch.optim.AdamW(model.parameters(), lr=1e-5)
-````
+```
 
 ## EfficientNet Family Overview
 
